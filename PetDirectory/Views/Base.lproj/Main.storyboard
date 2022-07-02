@@ -124,7 +124,7 @@
         <!--All cats-->
         <scene sceneID="taI-Nf-3Sy">
             <objects>
-                <viewController id="0Fs-BY-umz" userLabel="All cats" sceneMemberID="viewController">
+                <viewController id="0Fs-BY-umz" userLabel="All cats" customClass="AllCatsViewController" customModule="PetDirectory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1gm-GS-rtk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,7 +132,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAj-VT-Veh">
                                 <rect key="frame" x="0.0" y="44" width="414" height="74"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKs-Kt-qQy">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Cats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKs-Kt-qQy">
                                         <rect key="frame" x="25" y="25" width="364" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -152,7 +152,7 @@
                                 <rect key="frame" x="0.0" y="118" width="414" height="695"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="eo9-gc-pbP">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllCatsCell" id="eo9-gc-pbP" customClass="AllCatsTableViewCell" customModule="PetDirectory" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="80.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eo9-gc-pbP" id="IVd-ev-OCc">
@@ -178,25 +178,36 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfc-TH-q3o">
-                                                    <rect key="frame" x="373.5" y="35" width="15.5" height="13.5"/>
+                                                    <rect key="frame" x="347" y="35" width="42" height="13.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="13.67" id="JAv-d7-c0N"/>
+                                                    </constraints>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="filled" image="Unliked"/>
+                                                    <buttonConfiguration key="configuration" style="filled" image="Unliked">
+                                                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </buttonConfiguration>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="LLe-Qb-T2z" secondAttribute="bottom" constant="20" id="4hb-je-guO"/>
-                                                <constraint firstAttribute="bottom" secondItem="bfc-TH-q3o" secondAttribute="bottom" constant="32" id="7qX-4Q-1eo"/>
+                                                <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="bfc-TH-q3o" secondAttribute="bottom" constant="32" id="7qX-4Q-1eo"/>
                                                 <constraint firstItem="25h-g4-SHw" firstAttribute="centerY" secondItem="LLe-Qb-T2z" secondAttribute="centerY" id="IMh-xY-w7Y"/>
                                                 <constraint firstAttribute="trailing" secondItem="bfc-TH-q3o" secondAttribute="trailing" constant="25" id="PJ9-Ur-Uwf"/>
+                                                <constraint firstItem="bfc-TH-q3o" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="25h-g4-SHw" secondAttribute="trailing" constant="8" symbolic="YES" id="Rsx-h5-oEc"/>
                                                 <constraint firstItem="25h-g4-SHw" firstAttribute="leading" secondItem="LLe-Qb-T2z" secondAttribute="trailing" constant="14" id="ffK-vG-q8a"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="25h-g4-SHw" secondAttribute="bottom" constant="19.5" id="sAB-9y-LcF"/>
                                                 <constraint firstItem="bfc-TH-q3o" firstAttribute="top" secondItem="IVd-ev-OCc" secondAttribute="topMargin" constant="24" id="uZm-7H-h7T"/>
                                                 <constraint firstItem="LLe-Qb-T2z" firstAttribute="top" secondItem="IVd-ev-OCc" secondAttribute="top" constant="20" id="yKc-xR-l8y"/>
-                                                <constraint firstItem="bfc-TH-q3o" firstAttribute="leading" secondItem="25h-g4-SHw" secondAttribute="trailing" constant="218.5" id="yi9-n6-JHt"/>
                                                 <constraint firstItem="LLe-Qb-T2z" firstAttribute="leading" secondItem="IVd-ev-OCc" secondAttribute="leading" constant="25" id="zqB-bF-enK"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="catImage" destination="LLe-Qb-T2z" id="hpe-2x-4Kv"/>
+                                            <outlet property="catName" destination="25h-g4-SHw" id="AJJ-W4-S4l"/>
+                                            <outlet property="likeCat" destination="bfc-TH-q3o" id="zRW-AL-5iG"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -214,6 +225,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="All cats" image="Cat" id="iJm-Ok-Gvi" userLabel="All cats"/>
+                    <connections>
+                        <outlet property="allCatsTableView" destination="PCQ-rB-S29" id="5qF-bu-CqR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fpa-va-c5G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

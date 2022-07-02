@@ -9,5 +9,5 @@ import Foundation
 
 struct Link {
     static let catApi = "https://api.thecatapi.com/v1/breeds"
-    static let defaultImageLink = "https://www.drawingnow.com/file/videos/steps/121737/how-to-draw-a-simple-cat-face-step-7.jpg"
+    static let defaultImageLink = URL(string: "https://www.drawingnow.com/file/videos/steps/121737/how-to-draw-a-simple-cat-face-step-7.jpg")//"https://www.drawingnow.com/file/videos/steps/121737/how-to-draw-a-simple-cat-face-step-7.jpg"
 }

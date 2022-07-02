@@ -7,25 +7,23 @@
 
 import UIKit
 
-protocol CurrentDataDelegate: AnyObject{
-    func receiveData(_ data: CatModel)
+protocol AllCatsDataDelegate: AnyObject{
+    func receiveData(_ data: [CatModel])
 }
 
-class CurrentWeatherViewModel {
+class AllCatsViewModel {
     
-     weak var delegate: CurrentDataDelegate?
+     weak var delegate: AllCatsDataDelegate?
     
     private let urlString: String = Link.catApi
     
     public lazy var catResource: CatResourceProtocol = CatResource(urlString: urlString)
-    private var catList: CatModel?
     
     func receiveData() {
         catResource.getCatData { [weak self] result in
             switch result {
             case .success(let listOf):
                 self?.delegate?.receiveData(listOf)
-                debugPrint(listOf)
             case .failure(let error):
                 print("Error processing json data: \(error.localizedDescription)")
             }

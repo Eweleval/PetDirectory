@@ -15,10 +15,11 @@ struct ImageResource {
         downloadQueue.async(execute: { () -> Void in
             do{
                 let data = try Data(contentsOf: url)
+                
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async { completion(image) }
                 } else { print("Could not decode image") }
-            }catch { print("Could not load URL: \(url): \(error)") }
+            } catch { print("Could not load URL: \(url): \(error)") }
         })
     }
     
