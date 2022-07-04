@@ -9,8 +9,11 @@ import UIKit
 
 class AllCatsViewController: UIViewController {
 
+    let store: UserDefaults = UserDefaults.standard
+
     let allCatsModel = AllCatsViewModel()
     var listOfCats = [CatModel]()
+
     @IBOutlet weak var allCatsTableView: UITableView!
     
     override func viewDidLoad() {
@@ -19,5 +22,6 @@ class AllCatsViewController: UIViewController {
         allCatsModel.delegate = self
         allCatsModel.receiveData()
         allCatsTableView.dataSource = self
+        allCatsTableView.delegate = self
     }
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension AllCatsViewController: AllCatsDataDelegate, UITableViewDataSource {
+extension AllCatsViewController: UITableViewDataSource, UITableViewDelegate, AllCatsTableViewCellDelegate, AllCatsDataDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         listOfCats.count
     }
@@ -25,6 +25,8 @@ extension AllCatsViewController: AllCatsDataDelegate, UITableViewDataSource {
             }
         }
 
+        cell.delegate = self
+        cell.likedCatInfo = pet
         cell.selectionStyle = .none
         return cell
     }
@@ -32,5 +34,24 @@ extension AllCatsViewController: AllCatsDataDelegate, UITableViewDataSource {
     func receiveData(_ data: [CatModel]) {
         self.listOfCats = data
         allCatsTableView.reloadData()
+    }
+
+    func tappedLike(data: CatModel?) {
+        guard let data = data else {
+            return
+        }
+
+        do {
+            if store.value(forKey: "LikedCats") == nil {
+                try store.saveObject([data], forKey: "LikedCats")
+            } else {
+            _ = try store.updateObject(
+                with: data,
+                forKey: "LikedCats",
+                castTo: [CatModel].self)
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }

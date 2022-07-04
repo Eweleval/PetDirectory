@@ -12,7 +12,7 @@
         <!--Cats I like-->
         <scene sceneID="VRZ-zD-OFt">
             <objects>
-                <viewController id="x9O-Ch-F9b" sceneMemberID="viewController">
+                <viewController id="x9O-Ch-F9b" customClass="CatsILikeViewController" customModule="PetDirectory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FFo-Yc-0Ot">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,7 +20,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qac-Xc-6iE">
                                 <rect key="frame" x="0.0" y="44" width="414" height="74"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lZ-pG-fTi">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cats I Like" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lZ-pG-fTi">
                                         <rect key="frame" x="25" y="25" width="364" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -46,15 +46,15 @@
                                     <inset key="sectionInset" minX="24" minY="0.0" maxX="24" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6gh-BZ-YOY">
-                                        <rect key="frame" x="24" y="0.0" width="150" height="178.5"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CatsILikeCell" id="6gh-BZ-YOY" customClass="CatsILikeCollectionViewCell" customModule="PetDirectory" customModuleProvider="target">
+                                        <rect key="frame" x="24" y="0.0" width="150" height="185.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dib-7y-XRJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="150" height="178.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="185.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="M30-Gl-rcw">
-                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="178.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="185.5"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c2y-qA-Kkb" customClass="RoundedImageView" customModule="PetDirectory" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -68,24 +68,30 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="A9c-t7-dAp">
-                                                            <rect key="frame" x="0.0" y="165" width="150" height="13.5"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="A9c-t7-dAp">
+                                                            <rect key="frame" x="0.0" y="165" width="150" height="20.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cat Names" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FiJ-jD-YVJ">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="114.5" height="13.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="124.5" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9YK-P3-ocn">
-                                                                    <rect key="frame" x="134.5" y="0.0" width="15.5" height="13.5"/>
+                                                                    <rect key="frame" x="134.5" y="3.5" width="15.5" height="13.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="13.67" id="6b5-qv-3Ia"/>
                                                                         <constraint firstAttribute="width" constant="15.68" id="HL5-18-YmN"/>
                                                                     </constraints>
                                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <state key="normal" title="Button"/>
-                                                                    <buttonConfiguration key="configuration" style="filled" image="Liked"/>
+                                                                    <buttonConfiguration key="configuration" style="filled" image="Liked">
+                                                                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </buttonConfiguration>
+                                                                    <connections>
+                                                                        <action selector="tappedLike:" destination="4mZ-gd-wZN" eventType="touchUpInside" id="xIa-rx-Pd7"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
@@ -99,6 +105,11 @@
                                                 <constraint firstAttribute="bottom" secondItem="M30-Gl-rcw" secondAttribute="bottom" id="fae-vb-76q"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="catImage" destination="c2y-qA-Kkb" id="Z7S-qz-5Bd"/>
+                                            <outlet property="catName" destination="FiJ-jD-YVJ" id="mfv-aS-TuI"/>
+                                            <outlet property="likeCat" destination="9YK-P3-ocn" id="qmu-JQ-K9V"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -116,8 +127,12 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Cats I like" image="Favourite" id="JD7-Xl-LqR"/>
+                    <connections>
+                        <outlet property="catsILike" destination="quC-gz-7D2" id="vXw-dE-DC3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdc-ei-DrM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="4mZ-gd-wZN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-944.92753623188412" y="438.61607142857139"/>
         </scene>
@@ -148,19 +163,19 @@
                                     <constraint firstItem="sKs-Kt-qQy" firstAttribute="top" secondItem="fAj-VT-Veh" secondAttribute="top" constant="25" id="o2I-ck-eIM"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PCQ-rB-S29">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PCQ-rB-S29">
                                 <rect key="frame" x="0.0" y="118" width="414" height="695"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllCatsCell" id="eo9-gc-pbP" customClass="AllCatsTableViewCell" customModule="PetDirectory" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="80.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eo9-gc-pbP" id="IVd-ev-OCc">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="catimage" translatesAutoresizingMaskIntoConstraints="NO" id="LLe-Qb-T2z" customClass="RoundedImageView" customModule="PetDirectory" customModuleProvider="target">
-                                                    <rect key="frame" x="25" y="20" width="40" height="40.5"/>
+                                                    <rect key="frame" x="25" y="20" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="FMF-89-3ke"/>
                                                         <constraint firstAttribute="height" constant="40" id="eIm-uJ-zcQ"/>
@@ -172,7 +187,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cat Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25h-g4-SHw">
-                                                    <rect key="frame" x="79" y="30.5" width="76" height="19.5"/>
+                                                    <rect key="frame" x="79" y="30.5" width="76" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -188,15 +203,18 @@
                                                         <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="tappedLike:" destination="eo9-gc-pbP" eventType="touchUpInside" id="mDV-0y-05s"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="LLe-Qb-T2z" secondAttribute="bottom" constant="20" id="4hb-je-guO"/>
                                                 <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="bfc-TH-q3o" secondAttribute="bottom" constant="32" id="7qX-4Q-1eo"/>
                                                 <constraint firstItem="25h-g4-SHw" firstAttribute="centerY" secondItem="LLe-Qb-T2z" secondAttribute="centerY" id="IMh-xY-w7Y"/>
-                                                <constraint firstAttribute="trailing" secondItem="bfc-TH-q3o" secondAttribute="trailing" constant="25" id="PJ9-Ur-Uwf"/>
                                                 <constraint firstItem="bfc-TH-q3o" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="25h-g4-SHw" secondAttribute="trailing" constant="8" symbolic="YES" id="Rsx-h5-oEc"/>
                                                 <constraint firstItem="25h-g4-SHw" firstAttribute="leading" secondItem="LLe-Qb-T2z" secondAttribute="trailing" constant="14" id="ffK-vG-q8a"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="bfc-TH-q3o" secondAttribute="trailing" constant="5" id="lzZ-Wu-PUF"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="25h-g4-SHw" secondAttribute="bottom" constant="19.5" id="sAB-9y-LcF"/>
                                                 <constraint firstItem="bfc-TH-q3o" firstAttribute="top" secondItem="IVd-ev-OCc" secondAttribute="topMargin" constant="24" id="uZm-7H-h7T"/>
                                                 <constraint firstItem="LLe-Qb-T2z" firstAttribute="top" secondItem="IVd-ev-OCc" secondAttribute="top" constant="20" id="yKc-xR-l8y"/>
@@ -206,7 +224,7 @@
                                         <connections>
                                             <outlet property="catImage" destination="LLe-Qb-T2z" id="hpe-2x-4Kv"/>
                                             <outlet property="catName" destination="25h-g4-SHw" id="AJJ-W4-S4l"/>
-                                            <outlet property="likeCat" destination="bfc-TH-q3o" id="zRW-AL-5iG"/>
+                                            <outlet property="likeCat" destination="bfc-TH-q3o" id="PKZ-m2-4z6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -22,7 +22,7 @@ struct ImageResource {
             } catch { print("Could not load URL: \(url): \(error)") }
         })
     }
-    
+
     func requestImage(from url: URL, completion: @escaping (_ image: UIImage) -> Void){
         loadImages(from: url, completion: completion)
     }
